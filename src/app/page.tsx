@@ -4,12 +4,19 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import Image from "next/image";
-import { AppBar, Toolbar, Typography, Button, Avatar } from "@mui/material";
-import { useAuth } from "../contexts/AuthContext"; // Assuming you have a custom auth context
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  Avatar,
+  Card,
+  CardContent,
+  CardActions,
+} from "@mui/material";
 
 export default function Home() {
   const [loading, setLoading] = useState(true); // To handle loading state
-  const [user, setUser] = useState(null);
   const router = useRouter();
   const auth = getAuth();
 
@@ -19,7 +26,6 @@ export default function Home() {
         // Redirect to sign-in page if no user is logged in
         router.push("/signin");
       } else {
-        setUser(currentUser); // Set the user once authenticated
         setLoading(false); // Set loading to false once the user is authenticated
       }
     });
@@ -46,14 +52,31 @@ export default function Home() {
   return (
     <div>
       {/* App Bar */}
-      <AppBar position="sticky" color="primary">
+      <AppBar
+        position="sticky"
+        sx={{
+          backgroundColor: "white",
+          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+          color: "black",
+        }}
+      >
         <Toolbar>
+          <Image
+            src="/sloth.svg"
+            alt="My Sleep Hub Logo"
+            width={100}
+            height={50}
+            priority
+          />
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             My Sleep Hub
           </Typography>
-          {user && (
+          {auth.currentUser && (
             <div className="flex items-center gap-4">
-              <Avatar alt={user.displayName} src={user.photoURL} />
+              <Avatar
+                alt={auth.currentUser.displayName || ""}
+                src={auth.currentUser.photoURL || ""}
+              />
               <Button color="inherit" onClick={handleSignOut}>
                 Sign Out
               </Button>
@@ -63,50 +86,102 @@ export default function Home() {
       </AppBar>
 
       {/* Main Content */}
-      <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-        <header className="flex flex-col items-center gap-4">
+      <div className="p-8 sm:p-20 min-h-screen">
+        <header className="flex flex-col items-center mb-4">
           <Image
-            src="/sleep-hub-logo.svg" // Replace with your actual logo
+            src="/sloth.svg"
             alt="My Sleep Hub Logo"
-            width={180}
-            height={38}
+            width={300}
+            height={100}
             priority
           />
           <h1 className="text-3xl font-bold text-center">
-            Welcome to My Sleep Hub
+            Hi, {auth.currentUser?.displayName}. Welcome to My Sleep Hub!
           </h1>
         </header>
 
-        <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start w-full max-w-2xl">
-          <section className="text-center sm:text-left">
-            <h2 className="text-xl font-semibold">Daily Sleep Dashboard</h2>
-            <p className="text-gray-600">
-              Your personalized dashboard for sleep tips, facts, and progress.
-            </p>
+        <main className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          {/* Tip Generator Section */}
+          <section className="col-span-1">
+            <Card variant="outlined">
+              <CardContent>
+                <Typography variant="h6" component="div" gutterBottom>
+                  Tip Generator
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Get personalized tips to improve your sleep hygiene.
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button
+                  variant="contained"
+                  sx={{ backgroundColor: "#fefefe", color: "black" }}
+                  fullWidth
+                  onClick={() => alert("Generate a Sleep Tip")}
+                >
+                  Generate Tip
+                </Button>
+              </CardActions>
+            </Card>
           </section>
 
-          <section className="flex flex-col gap-4 items-center sm:items-start w-full">
-            <button
-              className="rounded-full bg-blue-600 text-white px-6 py-3 hover:bg-blue-700"
-              onClick={() => alert("Generate a Sleep Tip")}
-            >
-              Get a Sleep Tip
-            </button>
-            <div className="bg-gray-100 p-4 rounded-lg shadow w-full">
-              <h3 className="text-lg font-semibold">Sleep Progress</h3>
-              <p className="text-gray-500">
-                Visualize your circadian rhythm and sleep pressure here.
-              </p>
-              {/* Placeholder for Circadian Rhythm and Sleep Pressure Graphs */}
-              <div className="h-32 bg-white rounded mt-4 flex items-center justify-center text-gray-400">
-                Graphs Coming Soon
-              </div>
-            </div>
+          {/* Graphs Section */}
+          <section className="col-span-1">
+            <Card variant="outlined">
+              <CardContent>
+                <Typography variant="h6" component="div" gutterBottom>
+                  Sleep Graphs
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Visualize your sleep progress and circadian rhythm.
+                </Typography>
+                <div className="h-32 bg-gray-100 rounded mt-4 flex items-center justify-center text-gray-400">
+                  Graphs Coming Soon
+                </div>
+              </CardContent>
+            </Card>
+          </section>
+
+          {/* Sleep Modules Section */}
+          <section className="col-span-1">
+            <Card variant="outlined">
+              <CardContent>
+                <Typography variant="h6" component="div" gutterBottom>
+                  Sleep Modules
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Explore in-depth learning resources to optimize your sleep.
+                </Typography>
+                <div className="mt-4 grid grid-cols-1 gap-4">
+                  <Button
+                    variant="outlined"
+                    fullWidth
+                    onClick={() => router.push("/module1")}
+                  >
+                    Module 1: Understanding Sleep
+                  </Button>
+                  <Button
+                    variant="outlined"
+                    fullWidth
+                    onClick={() => router.push("/module2")}
+                  >
+                    Module 2: Sleep Hygiene
+                  </Button>
+                  <Button
+                    variant="outlined"
+                    fullWidth
+                    onClick={() => router.push("/module3")}
+                  >
+                    Module 3: Managing Sleep Disorders
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           </section>
         </main>
 
-        <footer className="row-start-3 text-sm text-center text-gray-500">
-          <p>&copy; 2024 My Sleep Hub. All rights reserved.</p>
+        <footer className="mt-8 text-center text-gray-500 text-sm">
+          &copy; 2024 My Sleep Hub. All rights reserved.
         </footer>
       </div>
     </div>

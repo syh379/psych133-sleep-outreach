@@ -37,31 +37,21 @@ const SignIn = () => {
       )}
 
       {/* AppBar with Avatar and Sign Out button */}
-      <AppBar position="static">
+      <AppBar
+        position="sticky"
+        sx={{
+          backgroundColor: "white",
+          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+          color: "black",
+        }}
+      >
         <Toolbar>
           {user ? (
-            <>
-              <Typography variant="h6" sx={{ flexGrow: 1 }}>
-                Welcome, {user.displayName}
-              </Typography>
-              <IconButton
-                color="inherit"
-                onClick={() => {
-                  handleSignOut;
-                }}
-              >
-                <ExitToAppIcon />
-              </IconButton>
-            </>
+            <></>
           ) : (
-            <>
-              <Typography variant="h6" sx={{ flexGrow: 1 }}>
-                Please Sign In
-              </Typography>
-              <Button color="inherit" onClick={signInWithGoogle}>
-                Sign In with Google
-              </Button>
-            </>
+            <Typography variant="h6" sx={{ flexGrow: 1 }}>
+              Please Sign In to Continue
+            </Typography>
           )}
         </Toolbar>
       </AppBar>
@@ -70,10 +60,9 @@ const SignIn = () => {
       <div className="flex flex-col items-center justify-center flex-grow">
         {!user && (
           <>
-            <p className="text-xl mb-4">Please sign in to continue</p>
             <button
               onClick={signInWithGoogle}
-              className="mt-4 p-2 bg-blue-600 text-white rounded"
+              className="mt-4 p-2 bg-blue-400 text-white rounded"
             >
               Sign In with Google
             </button>
