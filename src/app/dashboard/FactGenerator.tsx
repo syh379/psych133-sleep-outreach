@@ -104,7 +104,7 @@ export default function FactGenerator() {
               alt="Sleep Fact"
               className="rounded-xl"
               style={{
-                width: "auto",
+                width: "400px",
                 height: "220px",
                 margin: "1rem",
               }}
