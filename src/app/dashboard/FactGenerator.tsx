@@ -61,7 +61,8 @@ export default function FactGenerator() {
           Sleep Fact Generator
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Learn fun, bite-sized facts about sleep!
+          Learn fun, bite-sized facts about sleep fundamentals and sleep's
+          relationship with your cognition!
         </Typography>
         <CardActions>
           <Button

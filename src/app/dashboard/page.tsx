@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
@@ -16,6 +15,7 @@ import {
 import { motion } from "framer-motion"; // Import Framer Motion
 import SleepGraphs from "./SleepGraphs";
 import FactGenerator from "./FactGenerator";
+import ModuleCarousel from "./ModuleCarousel";
 
 export default function Home() {
   const [loading, setLoading] = useState(true); // To handle loading state
@@ -139,39 +139,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Card variant="outlined">
-              <CardContent>
-                <Typography variant="h6" component="div" gutterBottom>
-                  Sleep Modules
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Explore in-depth learning resources to optimize your sleep.
-                </Typography>
-                <div className="mt-4 grid grid-cols-1 gap-4">
-                  <Button
-                    variant="outlined"
-                    fullWidth
-                    onClick={() => router.push("/module1")}
-                  >
-                    Module 1: Understanding Sleep
-                  </Button>
-                  <Button
-                    variant="outlined"
-                    fullWidth
-                    onClick={() => router.push("/module2")}
-                  >
-                    Module 2: Sleep Hygiene
-                  </Button>
-                  <Button
-                    variant="outlined"
-                    fullWidth
-                    onClick={() => router.push("/module3")}
-                  >
-                    Module 3: Managing Sleep Disorders
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+            <ModuleCarousel />
           </motion.section>
         </main>
 
