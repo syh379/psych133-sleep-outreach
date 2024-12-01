@@ -12,8 +12,9 @@ import {
   Avatar,
   Card,
   CardContent,
-  CardActions,
 } from "@mui/material";
+import { motion } from "framer-motion"; // Import Framer Motion
+
 import TipGenerator from "./TipGenerator";
 import SleepGraphs from "./SleepGraphs";
 
@@ -58,7 +59,7 @@ export default function Home() {
         position="sticky"
         sx={{
           backgroundColor: "white",
-          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+          boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
           color: "black",
         }}
       >
@@ -88,8 +89,14 @@ export default function Home() {
       </AppBar>
 
       {/* Main Content */}
-      <div className="p-8 sm:p-20 min-h-screen">
-        <header className="flex flex-col items-center mb-4">
+      <div className="p-8 sm:p-12 min-h-screen">
+        <motion.header
+          className="flex flex-col items-center mb-12"
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <Image
             src="/sloth.svg"
             alt="My Sleep Hub Logo"
@@ -100,21 +107,39 @@ export default function Home() {
           <h1 className="text-3xl font-bold text-center">
             Hi, {auth.currentUser?.displayName}. Welcome to My Sleep Hub!
           </h1>
-        </header>
+        </motion.header>
 
-        <main className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <main className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {/* Tip Generator Section */}
-          <section className="col-span-1">
+          <motion.section
+            className="col-span-2"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <TipGenerator />
-          </section>
+          </motion.section>
 
           {/* Graphs Section */}
-          <section className="col-span-1">
+          <motion.section
+            className="col-span-1"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <SleepGraphs />
-          </section>
+          </motion.section>
 
           {/* Sleep Modules Section */}
-          <section className="col-span-1">
+          <motion.section
+            className="col-span-1"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <Card variant="outlined">
               <CardContent>
                 <Typography variant="h6" component="div" gutterBottom>
@@ -148,12 +173,18 @@ export default function Home() {
                 </div>
               </CardContent>
             </Card>
-          </section>
+          </motion.section>
         </main>
 
-        <footer className="mt-8 text-center text-gray-500 text-sm">
+        <motion.footer
+          className="mt-8 text-center text-gray-500 text-sm"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
           &copy; 2024 My Sleep Hub. All rights reserved.
-        </footer>
+        </motion.footer>
       </div>
     </div>
   );
