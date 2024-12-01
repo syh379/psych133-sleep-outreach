@@ -77,7 +77,7 @@ export default function SleepGraphs() {
           label: "Realtime Circadian Rhythm",
           data: circadianSubset,
           fill: true,
-          borderColor: "red",
+          borderColor: "#E38E49", // Bright orange for realtime
           tension: 0.1,
           borderWidth: 3,
         },
@@ -85,7 +85,7 @@ export default function SleepGraphs() {
           label: "Realtime Sleep Drive",
           data: sleepPressureSubset,
           fill: true,
-          borderColor: "green",
+          borderColor: "#8174A0", // Bright blue for realtime
           tension: 0.1,
           borderWidth: 3,
         },
@@ -93,19 +93,19 @@ export default function SleepGraphs() {
           label: "Circadian Rhythm Trajectory",
           data: circadianRhythm,
           fill: false,
-          borderColor: "#FFB6C1",
-          borderDash: [5, 5], // Dashed line
+          borderColor: "#FFD2A0", // Light pink for trajectory
+          borderDash: [5, 5], // Dashed line for distinction
           tension: 0.1,
-          borderWidth: 2,
+          borderWidth: 1.5,
         },
         {
           label: "Sleep Drive Trajectory",
           data: sleepPressure,
           fill: false,
-          borderColor: "#90EE90",
-          borderDash: [5, 5], // Dashed line
+          borderColor: "#A888B5", // Light blue for trajectory
+          borderDash: [5, 5], // Dashed line for distinction
           tension: 0.1,
-          borderWidth: 2,
+          borderWidth: 1.5,
         },
       ],
     });
@@ -146,9 +146,11 @@ export default function SleepGraphs() {
             style={{
               position: "relative",
               width: "100%",
+              height: "300px",
               display: "flex",
               justifyContent: "center", // Center horizontally
               alignItems: "center", // Center vertically
+              marginTop: "0.5rem",
             }}
           >
             <Line data={chartData} options={options} />

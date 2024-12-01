@@ -14,9 +14,8 @@ import {
   CardContent,
 } from "@mui/material";
 import { motion } from "framer-motion"; // Import Framer Motion
-
-import TipGenerator from "./TipGenerator";
 import SleepGraphs from "./SleepGraphs";
+import FactGenerator from "./FactGenerator";
 
 export default function Home() {
   const [loading, setLoading] = useState(true); // To handle loading state
@@ -112,13 +111,13 @@ export default function Home() {
         <main className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {/* Tip Generator Section */}
           <motion.section
-            className="col-span-2"
+            className="col-span-1"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <TipGenerator />
+            <FactGenerator />
           </motion.section>
 
           {/* Graphs Section */}
@@ -134,7 +133,7 @@ export default function Home() {
 
           {/* Sleep Modules Section */}
           <motion.section
-            className="col-span-1"
+            className="col-span-2"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}

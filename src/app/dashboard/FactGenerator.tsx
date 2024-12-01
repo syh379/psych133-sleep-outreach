@@ -9,47 +9,48 @@ import {
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 import { motion } from "framer-motion"; // Import motion from Framer Motion
 
-// Define the type for a tip
-type Tip = {
+// Define the type for a fact
+type Fact = {
   id: string;
-  tip: string; // Adjust this based on your Firestore structure
+  fact: string;
+  imageURL: string;
 };
 
-export default function TipGenerator() {
-  const [tips, setTips] = useState<Tip[]>([]); // Explicitly define the type
-  const [currentTip, setCurrentTip] = useState<Tip | null>(null); // Handle a single tip
+export default function FactGenerator() {
+  const [facts, setFacts] = useState<Fact[]>([]); // Explicitly define the type
+  const [currentFact, setCurrentFact] = useState<Fact | null>(null); // Handle a single tip
 
   // Initialize Firestore
   const db = getFirestore();
 
   // Fetch tips from Firestore
   useEffect(() => {
-    const fetchTips = async () => {
+    const fetchFacts = async () => {
       try {
-        const tipsCollection = collection(db, "tips");
-        const tipsSnapshot = await getDocs(tipsCollection);
-        const tipsList = tipsSnapshot.docs.map((doc) => ({
+        const factsCollection = collection(db, "facts");
+        const factsSnapshot = await getDocs(factsCollection);
+        const factsList = factsSnapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
-        })) as Tip[]; // Ensure TypeScript recognizes this as an array of `Tip`
-        setTips(tipsList);
+        })) as Fact[]; // Ensure TypeScript recognizes this as an array of `Tip`
+        setFacts(factsList);
       } catch (error) {
         console.error("Error fetching tips: ", error);
       }
     };
 
-    fetchTips();
+    fetchFacts();
   }, [db]);
 
   // Handle tip generation
-  const generateTip = () => {
-    let randomIndex = Math.floor(Math.random() * tips.length);
-    if (tips.length > 0) {
+  const generateFact = () => {
+    let randomIndex = Math.floor(Math.random() * facts.length);
+    if (facts.length > 0) {
       // Ensure the tip is different from the current one
-      while (currentTip?.id === tips[randomIndex].id) {
-        randomIndex = Math.floor(Math.random() * tips.length);
+      while (currentFact?.id === facts[randomIndex].id) {
+        randomIndex = Math.floor(Math.random() * facts.length);
       }
-      setCurrentTip(tips[randomIndex]);
+      setCurrentFact(facts[randomIndex]);
     }
   };
 
@@ -57,24 +58,24 @@ export default function TipGenerator() {
     <Card variant="outlined">
       <CardContent>
         <Typography variant="h6" component="div" gutterBottom>
-          Tip Generator
+          Sleep Fact Generator
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Get tips to improve your sleep hygiene.
+          Learn fun, bite-sized facts about sleep!
         </Typography>
         <CardActions>
           <Button
             variant="contained"
             sx={{ backgroundColor: "#fefefe", color: "black" }}
             fullWidth
-            onClick={generateTip}
+            onClick={generateFact}
           >
-            Generate Tip
+            Generate a Fact
           </Button>
         </CardActions>
-        {currentTip && (
+        {currentFact && (
           <motion.div
-            key={currentTip.id} // Ensure motion is triggered for each new tip
+            key={currentFact.id} // Ensure motion is triggered for each new tip
             initial={{
               opacity: 0,
               x: -100, // Start from the left (horizontal)
@@ -91,15 +92,25 @@ export default function TipGenerator() {
               duration: 0.6,
               ease: "easeOut", // Smooth easing
             }}
-            className="mt-4"
             style={{
               display: "flex",
+              flexDirection: "row",
               justifyContent: "center",
               alignItems: "center",
             }}
           >
-            <Typography variant="body1" align="center">
-              {currentTip.tip}
+            <img
+              src={currentFact.imageURL}
+              alt="Sleep Fact"
+              className="rounded-xl"
+              style={{
+                width: "auto",
+                height: "220px",
+                margin: "1rem",
+              }}
+            />
+            <Typography variant="subtitle1" align="left">
+              {currentFact.fact}
             </Typography>
           </motion.div>
         )}
