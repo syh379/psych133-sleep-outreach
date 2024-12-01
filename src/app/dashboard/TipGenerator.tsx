@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { motion } from "framer-motion"; // Import motion from Framer Motion
 
 // Define the type for a tip
 type Tip = {
@@ -61,22 +62,48 @@ export default function TipGenerator() {
         <Typography variant="body2" color="text.secondary">
           Get tips to improve your sleep hygiene.
         </Typography>
+        <CardActions>
+          <Button
+            variant="contained"
+            sx={{ backgroundColor: "#fefefe", color: "black" }}
+            fullWidth
+            onClick={generateTip}
+          >
+            Generate Tip
+          </Button>
+        </CardActions>
         {currentTip && (
-          <div className="mt-4">
-            <Typography variant="body1">{currentTip.tip}</Typography>
-          </div>
+          <motion.div
+            key={currentTip.id} // Ensure motion is triggered for each new tip
+            initial={{
+              opacity: 0,
+              x: -100, // Start from the left (horizontal)
+            }}
+            animate={{
+              opacity: 1,
+              x: 0, // Move to the center (horizontal)
+            }}
+            exit={{
+              opacity: 0,
+              x: 100, // Move rightward when it disappears
+            }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut", // Smooth easing
+            }}
+            className="mt-4"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Typography variant="body1" align="center">
+              {currentTip.tip}
+            </Typography>
+          </motion.div>
         )}
       </CardContent>
-      <CardActions>
-        <Button
-          variant="contained"
-          sx={{ backgroundColor: "#fefefe", color: "black" }}
-          fullWidth
-          onClick={generateTip}
-        >
-          Generate Tip
-        </Button>
-      </CardActions>
     </Card>
   );
 }
