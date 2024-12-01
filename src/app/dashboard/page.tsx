@@ -14,6 +14,7 @@ import {
   CardContent,
   CardActions,
 } from "@mui/material";
+import TipGenerator from "./TipGenerator";
 
 export default function Home() {
   const [loading, setLoading] = useState(true); // To handle loading state
@@ -103,26 +104,7 @@ export default function Home() {
         <main className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* Tip Generator Section */}
           <section className="col-span-1">
-            <Card variant="outlined">
-              <CardContent>
-                <Typography variant="h6" component="div" gutterBottom>
-                  Tip Generator
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Get personalized tips to improve your sleep hygiene.
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button
-                  variant="contained"
-                  sx={{ backgroundColor: "#fefefe", color: "black" }}
-                  fullWidth
-                  onClick={() => alert("Generate a Sleep Tip")}
-                >
-                  Generate Tip
-                </Button>
-              </CardActions>
-            </Card>
+            <TipGenerator />
           </section>
 
           {/* Graphs Section */}
