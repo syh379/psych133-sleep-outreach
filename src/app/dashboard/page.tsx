@@ -15,6 +15,7 @@ import {
   CardActions,
 } from "@mui/material";
 import TipGenerator from "./TipGenerator";
+import SleepGraphs from "./SleepGraphs";
 
 export default function Home() {
   const [loading, setLoading] = useState(true); // To handle loading state
@@ -109,19 +110,7 @@ export default function Home() {
 
           {/* Graphs Section */}
           <section className="col-span-1">
-            <Card variant="outlined">
-              <CardContent>
-                <Typography variant="h6" component="div" gutterBottom>
-                  Sleep Graphs
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Visualize your sleep progress and circadian rhythm.
-                </Typography>
-                <div className="h-32 bg-gray-100 rounded mt-4 flex items-center justify-center text-gray-400">
-                  Graphs Coming Soon
-                </div>
-              </CardContent>
-            </Card>
+            <SleepGraphs />
           </section>
 
           {/* Sleep Modules Section */}
