@@ -78,17 +78,21 @@ export default function Page() {
           <Typography variant="body1" color="text.primary" paragraph>
             Insomnia is a sleep disorder characterized by difficulty falling
             asleep, staying asleep, or waking up too early and not being able to
-            go back to sleep. It can result in fatigue, mood disturbances, and a
-            decline in overall functioning. People with insomnia may experience
-            problems with concentration and performance during the day due to
-            inadequate rest. It can be classified into two types:
+            go back to sleep. It can result in distress, fatigue, mood
+            disturbances, and a decline in overall functioning. People with
+            insomnia may experience problems with concentration and performance
+            during the day due to inadequate rest. Chronic insomnia refers to
+            persistent sleep issues that last at least three times a week for
+            three months or more. Insomnia is more common than we think - ~10%
+            of the general population meet diagnostic criteria for insomnia.
+            There are 2 broad tpes of insomnia:
             <br />
-            <strong>Acute insomnia:</strong> Short-term sleep disturbances that
-            typically last a few days or weeks, often triggered by stress or
-            changes in the environment.
+            <strong>Sleep onset insomnia:</strong> This type of insomnia is
+            characterized by difficulty falling asleep.
             <br />
-            <strong>Chronic insomnia:</strong> Persistent sleep issues that last
-            at least three times a week for three months or more.
+            <strong>Sleep maintenance insomnia:</strong> This type of insomnia
+            involves difficulty staying asleep, resulting in frequent awakenings
+            throughout the night.
           </Typography>
         </Paper>
 
@@ -113,19 +117,20 @@ export default function Page() {
             has shown that insomnia can involve:
             <br />
             <strong>Increased arousal:</strong> Individuals with insomnia may
-            have higher levels of alertness and lower levels of sleep-promoting
-            chemicals like melatonin.
+            have higher levels of brain alertness related to the irregular
+            release of neurotransmitters from the brainstem.
             <br />
-            <strong>Hyperactivity in the brain:</strong> Studies suggest that
-            the brains of people with insomnia may show heightened activity in
-            regions responsible for stress responses, such as the amygdala and
-            prefrontal cortex.
+            <strong>Hyper-emotional activity in the brain:</strong> Studies
+            suggest that the brains of people with insomnia may show heightened
+            activity in regions responsible for stress responses (elevated
+            cortisol level in the evening and early morning), such as the
+            amygdala and prefrontal cortex. A major factor in this is the
+            failure of the thalamus to inhibit flow of sensory information
+            during sleep.
             <br />
-            <strong>Disrupted circadian rhythm:</strong> The sleep-wake cycle,
-            or circadian rhythm, may be misaligned, leading to poor-quality
-            sleep at night. These biological changes can perpetuate the cycle of
-            insomnia, making it more difficult for individuals to fall and stay
-            asleep.
+            <strong>Excessive memory activation:</strong> Insomnia can lead to
+            increased activation of the hippocampus, which is responsible for
+            memory formation and consolidation.
           </Typography>
         </Paper>
 
@@ -143,22 +148,25 @@ export default function Page() {
             Section 3: Treatment of insomnia
           </Typography>
           <Typography variant="body1" color="text.primary" paragraph>
-            Treatment for insomnia aims to address the underlying causes, reduce
-            symptoms, and restore healthy sleep patterns. Common approaches to
-            managing insomnia include:
+            Common treatments to insomnia include medication and psychological &
+            behavioral therapy.
+            <br />
+            <strong>Medication:</strong> One of the earlier medications used to
+            treat insomnia were sleeping pills known as sedative hypnotics.
+            These medications work by slowing down the nervous system, inducing
+            sleep. However, they can be habit-forming and may have side effects.
+            Newer medications, such as dual orexin receptor antagonists (DORAs),
+            are also available and can block signals in the brain that stimulate
+            wakefulness, inducing natural sleep.
             <br />
             <strong>
               Cognitive Behavioral Therapy for Insomnia (CBT-I):
             </strong>{" "}
             This structured program helps individuals identify and change
-            thoughts and behaviors that negatively impact sleep. CBT-I is
-            considered one of the most effective long-term treatments.
-            <br />
-            <strong>Medication:</strong> In some cases, doctors may prescribe
-            medications like benzodiazepines, non-benzodiazepine sedatives, or
-            melatonin receptor agonists to help individuals fall asleep.
-            However, medications are typically used short-term due to the
-            potential for dependence.
+            thoughts and behaviors that negatively impact sleep. The goal is to
+            restore the patients' confidence to control their sleep. CBT-I is
+            considered one of the most effective long-term treatments and its
+            impacts are long lasting even after treatment ends.
             <br />
             <strong>Sleep hygiene practices:</strong> Improving sleep
             environment and habits, such as maintaining a consistent sleep

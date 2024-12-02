@@ -59,7 +59,8 @@ export default function Page() {
         }}
       >
         <Typography variant="h3" align="center" gutterBottom>
-          Sleep in the Clinic 1: Insomnia
+          Sleep in the Clinic 3: Parasomnias, REM Behavioral Disorder, & Fatal
+          Familial Insomnia
         </Typography>
 
         {/* Section 1 */}
@@ -73,22 +74,31 @@ export default function Page() {
           }}
         >
           <Typography variant="h4" component="h2" gutterBottom>
-            Section 1: What is insomnia?
+            Section 1: Parasomnias - Types, cause, & a case of homicidal
+            somnambulism
           </Typography>
           <Typography variant="body1" color="text.primary" paragraph>
-            Insomnia is a sleep disorder characterized by difficulty falling
-            asleep, staying asleep, or waking up too early and not being able to
-            go back to sleep. It can result in fatigue, mood disturbances, and a
-            decline in overall functioning. People with insomnia may experience
-            problems with concentration and performance during the day due to
-            inadequate rest. It can be classified into two types:
-            <br />
-            <strong>Acute insomnia:</strong> Short-term sleep disturbances that
-            typically last a few days or weeks, often triggered by stress or
-            changes in the environment.
-            <br />
-            <strong>Chronic insomnia:</strong> Persistent sleep issues that last
-            at least three times a week for three months or more.
+            Parasomnias are a group of sleep disorders that involve abnormal
+            behaviors during sleep. These include sleepwalking, sleep talking,
+            sleep texting, sleep eating, night terrors, restless legs syndrome,
+            and, in rare cases, homicidal somnambulism. Parasomias occur more
+            often in children (perhaps becasue children experience more deep
+            NREM sleep) but can also occur in adults with stress and depression.
+          </Typography>
+          <br />
+          <Typography variant="body1" color="text.primary" paragraph>
+            Parasomnias are caused by inappropriate activation of the fight or
+            flight response in the nervous system, jolting the person awake from
+            deep sleep. This can be triggered by stress, anxiety, or other
+            factors. Parasomnias can be disruptive to sleep and may lead to
+            daytime fatigue and other health issues.
+          </Typography>
+          <br />
+          <Typography variant="body1" color="text.primary" paragraph>
+            Homicidal somnambulism is a condition in which a person engages in
+            violent acts during sleep, without conscious awareness. In one
+            famous case, a man was convicted of murder after allegedly killing
+            his parents-in-law while in a sleepwalking state.
           </Typography>
         </Paper>
 
@@ -103,29 +113,21 @@ export default function Page() {
           }}
         >
           <Typography variant="h4" component="h2" gutterBottom>
-            Section 2: Biological changes in insomnia
+            Section 2: REM sleep behavioral disorder - Symptoms, features, and
+            cause
           </Typography>
           <Typography variant="body1" color="text.primary" paragraph>
-            Insomnia is often associated with various biological changes that
-            affect the sleep-wake cycle. These changes may involve disruptions
-            in the regulation of the body’s circadian rhythms, neurotransmitter
-            imbalances, and alterations in the brain’s neural activity. Research
-            has shown that insomnia can involve:
-            <br />
-            <strong>Increased arousal:</strong> Individuals with insomnia may
-            have higher levels of alertness and lower levels of sleep-promoting
-            chemicals like melatonin.
-            <br />
-            <strong>Hyperactivity in the brain:</strong> Studies suggest that
-            the brains of people with insomnia may show heightened activity in
-            regions responsible for stress responses, such as the amygdala and
-            prefrontal cortex.
-            <br />
-            <strong>Disrupted circadian rhythm:</strong> The sleep-wake cycle,
-            or circadian rhythm, may be misaligned, leading to poor-quality
-            sleep at night. These biological changes can perpetuate the cycle of
-            insomnia, making it more difficult for individuals to fall and stay
-            asleep.
+            REM Sleep Behavioral Disorder (RBD) is a condition in which a person
+            physically acts out their dreams during the Rapid Eye Movement (REM)
+            stage of sleep. This may include violent movements, talking,
+            yelling, punching, kicking, or even attempting to leave the bed.
+            Symptoms of RBD can be severe, and some individuals may injure
+            themselves or their bed partners. The condition is believed to occur
+            due to a failure in the normal paralysis that occurs during REM
+            sleep, allowing the individual to physically act out their dreams.
+            RBD is often associated with neurodegenerative disorders, such as
+            Parkinson's disease, and is considered an early warning sign of
+            these conditions.
           </Typography>
         </Paper>
 
@@ -140,33 +142,20 @@ export default function Page() {
           }}
         >
           <Typography variant="h4" component="h2" gutterBottom>
-            Section 3: Treatment of insomnia
+            Section 3: Fatal Familial Insomnia - Description, mechanisms, and
+            example
           </Typography>
           <Typography variant="body1" color="text.primary" paragraph>
-            Treatment for insomnia aims to address the underlying causes, reduce
-            symptoms, and restore healthy sleep patterns. Common approaches to
-            managing insomnia include:
-            <br />
-            <strong>
-              Cognitive Behavioral Therapy for Insomnia (CBT-I):
-            </strong>{" "}
-            This structured program helps individuals identify and change
-            thoughts and behaviors that negatively impact sleep. CBT-I is
-            considered one of the most effective long-term treatments.
-            <br />
-            <strong>Medication:</strong> In some cases, doctors may prescribe
-            medications like benzodiazepines, non-benzodiazepine sedatives, or
-            melatonin receptor agonists to help individuals fall asleep.
-            However, medications are typically used short-term due to the
-            potential for dependence.
-            <br />
-            <strong>Sleep hygiene practices:</strong> Improving sleep
-            environment and habits, such as maintaining a consistent sleep
-            schedule, reducing screen time before bed, and creating a relaxing
-            bedtime routine, can help improve sleep quality. Additionally,
-            lifestyle changes like reducing caffeine and alcohol intake,
-            managing stress, and engaging in physical activity can also aid in
-            the treatment of insomnia.
+            Fatal Familial Insomnia (FFI) is a rare genetic disorder that causes
+            severe sleep disturbances, eventually leading to total insomnia and
+            death. FFI is caused by a mutation in the prion protein gene,
+            leading to progressive damage in the thalamus, the part of the brain
+            responsible for regulating sleep. Symptoms begin with difficulty
+            sleeping, followed by progressive insomnia, memory loss,
+            hallucinations, and motor dysfunction. As the disease progresses,
+            individuals lose the ability to sleep entirely, leading to severe
+            physical and cognitive decline. There is currently no cure for FFI,
+            and it is fatal within months to a few years after onset.
           </Typography>
         </Paper>
       </div>

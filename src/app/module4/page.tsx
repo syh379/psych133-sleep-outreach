@@ -59,7 +59,7 @@ export default function Page() {
         }}
       >
         <Typography variant="h3" align="center" gutterBottom>
-          Sleep in the Clinic 1: Insomnia
+          Sleep in the Clinic 2: Narcolepsy
         </Typography>
 
         {/* Section 1 */}
@@ -73,22 +73,16 @@ export default function Page() {
           }}
         >
           <Typography variant="h4" component="h2" gutterBottom>
-            Section 1: What is insomnia?
+            Section 1: Prevalence and First Signs of Narcolepsy
           </Typography>
           <Typography variant="body1" color="text.primary" paragraph>
-            Insomnia is a sleep disorder characterized by difficulty falling
-            asleep, staying asleep, or waking up too early and not being able to
-            go back to sleep. It can result in fatigue, mood disturbances, and a
-            decline in overall functioning. People with insomnia may experience
-            problems with concentration and performance during the day due to
-            inadequate rest. It can be classified into two types:
-            <br />
-            <strong>Acute insomnia:</strong> Short-term sleep disturbances that
-            typically last a few days or weeks, often triggered by stress or
-            changes in the environment.
-            <br />
-            <strong>Chronic insomnia:</strong> Persistent sleep issues that last
-            at least three times a week for three months or more.
+            Narcolepsy is a rare neurological disorder that affects about 1 in
+            2,000 people worldwide. The first signs typically appear between the
+            ages of 10 and 20 and include excessive daytime sleepiness, sudden
+            muscle weakness (cataplexy), and sleep disturbances. Many
+            individuals experience an irresistible urge to sleep during the day,
+            even after a full night’s sleep, leading to challenges in daily
+            activities.
           </Typography>
         </Paper>
 
@@ -103,29 +97,31 @@ export default function Page() {
           }}
         >
           <Typography variant="h4" component="h2" gutterBottom>
-            Section 2: Biological changes in insomnia
+            Section 2: Symptoms and Manifestation of Narcolepsy
           </Typography>
           <Typography variant="body1" color="text.primary" paragraph>
-            Insomnia is often associated with various biological changes that
-            affect the sleep-wake cycle. These changes may involve disruptions
-            in the regulation of the body’s circadian rhythms, neurotransmitter
-            imbalances, and alterations in the brain’s neural activity. Research
-            has shown that insomnia can involve:
+            The primary symptoms of narcolepsy include:
             <br />
-            <strong>Increased arousal:</strong> Individuals with insomnia may
-            have higher levels of alertness and lower levels of sleep-promoting
-            chemicals like melatonin.
+            <strong>Excessive Daytime Sleepiness:</strong> A constant feeling of
+            fatigue, often resulting in involuntary naps. It is usually the
+            first symptom to appear and often the most troubling as well.
             <br />
-            <strong>Hyperactivity in the brain:</strong> Studies suggest that
-            the brains of people with insomnia may show heightened activity in
-            regions responsible for stress responses, such as the amygdala and
-            prefrontal cortex.
+            <strong>Sleep Paralysis:</strong> A temporary inability to move or
+            speak when waking up or falling asleep. This usually happens during
+            the transition from REM to wakefulness where the brain is partially
+            awake but paralysis is still in place.
             <br />
-            <strong>Disrupted circadian rhythm:</strong> The sleep-wake cycle,
-            or circadian rhythm, may be misaligned, leading to poor-quality
-            sleep at night. These biological changes can perpetuate the cycle of
-            insomnia, making it more difficult for individuals to fall and stay
-            asleep.
+            <strong>Hypnagogic Hallucinations:</strong> Vivid, dream-like
+            experiences that occur while falling asleep or waking up. These
+            symptoms can significantly cause one distress as they confuse the
+            line between reality and dreams. These symptoms can significantly
+            impact an individual's ability to function in daily life and often
+            require medical attention for proper diagnosis and treatment.
+            <br />
+            <strong>Cataplexy:</strong> Sudden muscle weakness triggered by
+            strong emotions such as laughter, excitement, or anger. The sudden
+            loss of muscle control can range from slight weakness to total
+            collapse. The trigger is oftentimes strong (positive) emotions.
           </Typography>
         </Paper>
 
@@ -140,33 +136,23 @@ export default function Page() {
           }}
         >
           <Typography variant="h4" component="h2" gutterBottom>
-            Section 3: Treatment of insomnia
+            Section 3: Cause, Mechanism and Treatment of Narcolepsy
           </Typography>
           <Typography variant="body1" color="text.primary" paragraph>
-            Treatment for insomnia aims to address the underlying causes, reduce
-            symptoms, and restore healthy sleep patterns. Common approaches to
-            managing insomnia include:
+            Orexin is a neurochemical released from the hypothalamus that acts
+            as a switch that stimulates or shuts down the brainstem which
+            releases neurochemicals that govern the sleep-wake cycles.
+            Narcolepsy is associated with a significant loss of orexin brain
+            cells as well as orexin receptors in the brain, causing the brain to
+            be in an unstable state between wakefulness and sleepiness.
+            Treatment options focus on managing symptoms and may include:
             <br />
-            <strong>
-              Cognitive Behavioral Therapy for Insomnia (CBT-I):
-            </strong>{" "}
-            This structured program helps individuals identify and change
-            thoughts and behaviors that negatively impact sleep. CBT-I is
-            considered one of the most effective long-term treatments.
+            <strong>Stimulants:</strong> Medications such as amphetamines to
+            improve alertness during the day but have severe side effects. The
+            more recent new wake stimulating druge is Provigil.
             <br />
-            <strong>Medication:</strong> In some cases, doctors may prescribe
-            medications like benzodiazepines, non-benzodiazepine sedatives, or
-            melatonin receptor agonists to help individuals fall asleep.
-            However, medications are typically used short-term due to the
-            potential for dependence.
-            <br />
-            <strong>Sleep hygiene practices:</strong> Improving sleep
-            environment and habits, such as maintaining a consistent sleep
-            schedule, reducing screen time before bed, and creating a relaxing
-            bedtime routine, can help improve sleep quality. Additionally,
-            lifestyle changes like reducing caffeine and alcohol intake,
-            managing stress, and engaging in physical activity can also aid in
-            the treatment of insomnia.
+            <strong>Antidepressants:</strong> Drugs that can help with
+            cataplexy.
           </Typography>
         </Paper>
       </div>
