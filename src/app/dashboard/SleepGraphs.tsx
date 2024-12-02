@@ -28,7 +28,7 @@ export default function SleepGraphs() {
 
   const circadianRhythm = new Array(24)
     .fill(0)
-    .map((_, i) => 50 + 50 * Math.sin(((i - 6) / 24) * 2 * Math.PI));
+    .map((_, i) => 50 + 50 * Math.sin(((i - 7) / 24) * 2 * Math.PI));
 
   const sleepPressure = [
     200, 150, 110, 90, 75, 70, 65, 60, 75, 90, 105, 120, 130, 140, 150, 158,
