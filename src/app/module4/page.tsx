@@ -1,8 +1,9 @@
 "use client";
 import { motion, useScroll } from "framer-motion";
-import { Typography, IconButton, Paper } from "@mui/material";
+import { Typography, IconButton, Paper, Button } from "@mui/material";
 import ArrowBack from "@mui/icons-material/ArrowBack"; // Import the back arrow icon
 import { useRouter } from "next/navigation"; // For navigation
+import ArrowForward from "@mui/icons-material/ArrowForward";
 
 export default function Page() {
   const router = useRouter(); // Next.js router for navigation
@@ -155,6 +156,35 @@ export default function Page() {
             cataplexy.
           </Typography>
         </Paper>
+        {/* Navigation Buttons */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            marginBottom: "20px",
+          }}
+        >
+          <Button
+            variant="contained"
+            style={{
+              backgroundColor: "white",
+              color: "black",
+            }}
+            onClick={() => router.push("/module3")}
+          >
+            <ArrowBack /> Sleep in the Clinic 1
+          </Button>
+          <Button
+            variant="contained"
+            style={{
+              backgroundColor: "white",
+              color: "black",
+            }}
+            onClick={() => router.push("/module5")}
+          >
+            Sleep in the Clinic 3 <ArrowForward />
+          </Button>
+        </div>
       </div>
     </>
   );

@@ -1,7 +1,8 @@
 "use client";
 import { motion, useScroll } from "framer-motion";
-import { Typography, IconButton, Paper } from "@mui/material";
+import { Typography, IconButton, Paper, Button } from "@mui/material";
 import ArrowBack from "@mui/icons-material/ArrowBack"; // Import the back arrow icon
+import ArrowForward from "@mui/icons-material/ArrowForward"; // Import the forward arrow icon
 import { useRouter } from "next/navigation"; // For navigation
 
 export default function Page() {
@@ -164,6 +165,35 @@ export default function Page() {
             regulation and mental health.
           </Typography>
         </Paper>
+        {/* Navigation Buttons */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            marginBottom: "20px",
+          }}
+        >
+          <Button
+            variant="contained"
+            style={{
+              backgroundColor: "white",
+              color: "black",
+            }}
+            onClick={() => router.push("/module1")}
+          >
+            <ArrowBack /> Dreaming 1
+          </Button>
+          <Button
+            variant="contained"
+            style={{
+              backgroundColor: "white",
+              color: "black",
+            }}
+            onClick={() => router.push("/module3")}
+          >
+            Sleep in the Clinic 1 <ArrowForward />
+          </Button>
+        </div>
       </div>
     </>
   );

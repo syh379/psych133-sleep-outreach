@@ -1,6 +1,6 @@
 "use client";
 import { motion, useScroll } from "framer-motion";
-import { Typography, IconButton, Paper } from "@mui/material";
+import { Typography, IconButton, Paper, Button } from "@mui/material";
 import ArrowBack from "@mui/icons-material/ArrowBack"; // Import the back arrow icon
 import { useRouter } from "next/navigation"; // For navigation
 
@@ -158,6 +158,25 @@ export default function Page() {
             and it is fatal within months to a few years after onset.
           </Typography>
         </Paper>
+        {/* Navigation Buttons */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "start",
+            marginBottom: "20px",
+          }}
+        >
+          <Button
+            variant="contained"
+            style={{
+              backgroundColor: "white",
+              color: "black",
+            }}
+            onClick={() => router.push("/module4")}
+          >
+            <ArrowBack /> Sleep in the Clinic 2
+          </Button>
+        </div>
       </div>
     </>
   );
